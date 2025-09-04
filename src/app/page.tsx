@@ -1,103 +1,108 @@
-import Image from "next/image";
+import { Github, Youtube, Linkedin, Mail } from 'lucide-react';
+import type { ReactNode } from 'react';
+
+// Componente para os ícones de tecnologia (SVG in-line)
+const TechIcon = ({ children }: { children: ReactNode }) => (
+  <span className="inline-flex items-center justify-center bg-gray-700 text-cyan-400 rounded-full w-8 h-8 mr-2 mb-2">
+    {children}
+  </span>
+);
+
+const DotNetIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#512BD4"/>
+        <path d="M12.26 6.17l-4.71 8.16h2.2l1.37-2.38h3.33l-2.19-3.79-1.42-2.46-.03.05c-.1-.17-.18-.32-.25-.48zm1.71 6.35h-3.42l1.71-2.96 1.71 2.96z" fill="white"/>
+    </svg>
+);
+
+
+const NextJsIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM9 9h2v6H9V9zm4 0h2v6h-2V9z"/>
+    </svg>
+);
+
+
+const SolidityIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
+        <path d="M12 2l-10 6 10 6 10-6-10-6zM2 10.5v3l10 6 10-6v-3l-10 6-10-6zM12 22l-10-6v-3l10 6 10-6v3l-10 6z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-gray-900 text-gray-200 font-sans">
+      <main className="min-h-screen container mx-auto p-8 sm:p-12 md:p-20">
+        <div className="max-w-3xl mx-auto">
+          
+          {/* --- Seção de Cabeçalho --- */}
+          <header className="flex flex-col sm:flex-row items-center justify-between mb-16">
+            <div className="text-center sm:text-left mb-6 sm:mb-0">
+              <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+                Willian
+              </h1>
+              <p className="text-lg md:text-xl text-cyan-400 mt-1">
+                Desenvolvedor Fullstack & Web3
+              </p>
+            </div>
+            <div className="flex items-center space-x-4">
+               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Github size={28} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Linkedin size={28} />
+              </a>
+              <a href="https://youtube.com/c/DevWill" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Youtube size={28} />
+              </a>
+               <a href="mailto:seu-email@exemplo.com" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <Mail size={28} />
+              </a>
+            </div>
+          </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* --- Seção Sobre Mim --- */}
+          <section id="about" className="mb-16">
+            <h2 className="text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">Sobre Mim</h2>
+            <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
+              <p>
+                Desenvolvedor Fullstack desde 2019, com sólida experiência em <strong className="text-cyan-400">.NET</strong> e <strong className="text-cyan-400">Next.js</strong>. Minha trajetória inclui o desenvolvimento e manutenção de sistemas ERP Web complexos, utilizando bancos de dados como SQL Server e PL/SQL Oracle, com ampla prática em Stored Procedures.
+              </p>
+              <p>
+                Tenho expertise em tecnologias como WebSocket com SignalR, Web API, .NET MAUI e AngularJS. Atualmente, estou expandindo meus conhecimentos para o universo Web3, aprendendo <strong className="text-cyan-400">Solidity</strong> e <strong className="text-cyan-400">Hardhat</strong> para a criação de Smart Contracts na blockchain.
+              </p>
+              <p>
+                Além disso, compartilho minhas descobertas e aprendizados no meu canal do YouTube, <a href="https://youtube.com/c/DevWill" target="_blank" rel="noopener noreferrer" className="text-cyan-400 underline hover:text-cyan-300 transition-colors">Dev Will</a>.
+              </p>
+            </div>
+          </section>
+
+          {/* --- Seção de Habilidades --- */}
+          <section id="skills">
+            <h2 className="text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">Habilidades</h2>
+            <div className="flex flex-wrap gap-2 text-sm">
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">.NET</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">Next.js</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">SQL Server</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">PL/SQL Oracle</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">Web API</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">.NET MAUI</span>
+                <span className="bg-cyan-900/50 text-cyan-300 py-1 px-3 rounded-full">AngularJS</span>
+                <span className="bg-gray-700 text-gray-300 py-1 px-3 rounded-full">Solidity</span>
+                <span className="bg-gray-700 text-gray-300 py-1 px-3 rounded-full">Hardhat</span>
+                <span className="bg-gray-700 text-gray-300 py-1 px-3 rounded-full">Smart Contracts</span>
+                <span className="bg-gray-700 text-gray-300 py-1 px-3 rounded-full">Blockchain</span>
+                <span className="bg-gray-700 text-gray-300 py-1 px-3 rounded-full">WEB3</span>
+            </div>
+          </section>
+
+          {/* --- Footer --- */}
+          <footer className="text-center text-gray-500 mt-20 pt-8 border-t border-gray-800">
+             <p>&copy; {new Date().getFullYear()} Willian. Todos os direitos reservados.</p>
+          </footer>
+
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
